@@ -26,38 +26,20 @@
       <a href="home.html"><i class="fa fa-home"></i></a>
       <a href="search.html"><i class="fa fa-search"></i></a> 
       <a href="upload.html"><i class="fa fa-camera"></i></a> 
-      <a class="active" href="#"><i class="fa fa-user"></i></a>
+      <a href="profile.html"><i class="fa fa-user"></i></a>
     </div>
 
     <div class="profile">
-
     <div class="container">
-      <img id="profile-pic" class="image" src="_img/profilepic.png" alt="Avatar" style="width:100%">
+      <img id="profile-pic" class="image" src="_img/user.jpeg" alt="Avatar" style="width:100%">
       <div class="middle">
-        <input id="file" type="file" />
       </div>
     </div>
 
     <div class="info">
-    	<p><strong>Emma Chase</strong></p>
-        <p>25, Oakville + Toronto // marketing @ loblaws // chicken nuggets are cool</p>
-        <input id="myBtn" type="submit" value="EDIT">
-
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-            <span class="close">&times;</span>
-            <h4>Edit Profile</h4>
-                <div class="form">
-                <form action="/action_page.php">
-                    <input type="text" id="uname" name="username" placeholder="Username"><br/>
-                    <input type="text" id="password" name="password" placeholder="Password"><br/>
-                    <textarea id="bio" name="bio" placeholder="Enter Bio" maxlength="75"></textarea><br/>
-                    <input type="submit" value="Save">
-                </form>
-                </div>
-            </div>
-        </div>
+    	<p><strong>Sunshine77</strong></p>
+        <p>I love sunshine and the number 77</p>
+        <input id="myBtn" class="edit follow" type="submit" value="Follow">
     </div>
 
     </div>
@@ -93,21 +75,6 @@
                     <p>Username</p>
                 </div>
 
-                <div class="see-followers">
-                    <p>Username</p>
-                </div>
-
-                <div class="see-followers">
-                    <p>Username</p>
-                </div>
-
-                <div class="see-followers">
-                    <p>Username</p>
-                </div>
-
-                <div class="see-followers">
-                    <p>Username</p>
-                </div>
             </div>
             </div>
         </div>
@@ -148,27 +115,9 @@
                     <p>Username</p>
                 </div>
 
-                <div class="see-followers">
-                    <p>Username</p>
-                </div>
-
-                <div class="see-followers">
-                    <p>Username</p>
-                </div>
-
-                <div class="see-followers">
-                    <p>Username</p>
-                </div>
-
             </div>
             </div>
         </div>
-    </div>
-
-    <!-- Profile Nav -->
-    <div class="boxes profile-nav underline">
-        <a href="#" class="active"><div class="box box2"><img src="_img/icon-look.svg"/></div></a>
-        <a href="#"><div class="box box2"><img src="_img/icon-like.svg"/></div></a>
     </div>
 
     <!-- Photo Gallery -->
@@ -194,7 +143,25 @@
         <div><a href="#"><img class="photo" src="_img/temp.jpg"></a></div>
     </div>
 
-<script src="js/main.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+<script>
+$('.follow').click(function(){
+    var $this = $(this);
+    $this.toggleClass('follow');
+    if($this.hasClass('follow')){
+        $this.attr("value", "Follow");   
+        $this.css("background-color", "white"); 
+        $this.css("color", "grey");     
+    } else {
+        $this.attr("value", "Following");
+        $this.css("background-color", "grey");
+        $this.css("color", "white");
+    }
+});
+</script>
 
 </body>
 </html>

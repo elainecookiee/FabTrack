@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>Home Feed</title>
+<head>
+    <link rel="stylesheet" href="css/post.css"> 
+    <meta charset="utf-8" name="viewport" content="width=device-width initial-scale=1.0">
+    
+<script src="https://use.fontawesome.com/1382f05c56.js"></script>
+
+</head>
+<body>
+<!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div class="icon-bar">
+  <a href="home.html"><i class="fa fa-home"></i></a>
+  <a class="active" href="#"><i class="fa fa-search"></i></a> 
+  <a href="upload.html"><i class="fa fa-camera"></i></a> 
+  <a href="profile.html"><i class="fa fa-user"></i></a>
+</div>
+
+<a href="#" class="add-find" alt="Add a Find">Add Find</a>
+
+<div id="feed">
+    <div class="feedItems">
+        <div class="userPicAndName">
+            <img class="userPic" src="_img/user.jpeg">
+            <a href="profile.html"><p class="userName">sunshine77</p></a>
+        </div>
+        <div class="post">
+        <img class="lazy" data-original="_img/shoes.jpeg">
+            <div id="postInteraction">
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-heart-o" aria-hidden="true"></i>
+            </div>
+        <p class="postTitle">Shoes</p>
+        <p class="postDescription">I saw someone wearing these pair of shoes on the subway and fell in love! Anyone know where I can find cheaper ones?</p>
+
+        </div>
+    </div>
+
+    <div class="postFinds">2 Finds</div>
+    
+    <div class="finds">
+        <div class="postComment">
+            <p class="postCommentUser">username</p>
+            <p class="postCommentLink">The Bay</p>
+            <i width="50%" class="fa fa-angle-right" aria-hidden="true"></i>
+        </div>
+        
+        <div class="postComment">
+            <p class="postCommentUser">username</p>
+            <p class="postCommentLink">Forever 21</p>
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </div>
+    </div>
+
+</div>
+
+<a href="#" alt="back to top button">Add a Find</a>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="js/jquery.lazyload.js"></script>
+<script src="js/post.js"></script>   
+<script src="js/scroll.js"></script>   
+    
+</body>
+</html>

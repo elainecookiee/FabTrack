@@ -21,29 +21,23 @@
     <![endif]-->
 
 
-<!-- SIGN UP -->
+<!-- LOGIN -->
 
-    <div class="icon-bar">
-      <a href="home.html"><i class="fa fa-home"></i></a>
-      <a href="search.html"><i class="fa fa-search"></i></a> 
-      <a href="upload.html"><i class="fa fa-camera"></i></a> 
-      <a class="active" href="profile.html"><i class="fa fa-user"></i></a>
+    <div class="form-style">
+    <div class="form-title">
+        <h3>Login</h3>
+        <p>or <a href="signup.html">Create an Account</a></p>
     </div>
-
-    <h3>Sign Up</h3>
-
-    <div class="form">
-      <form action="/action_page.php">
-        <input type="text" id="fname" name="firstname" placeholder="First Name">
-        <input type="text" id="lname" name="lastname" placeholder="Last Name">
+      <form action="#">
+      <div class="errors"></div>
         <input type="text" id="uname" name="username" placeholder="Username">
-        <input type="text" id="email" name="email" placeholder="Email">
-        <input type="text" id="password" name="password" placeholder="Password">
-        <input type="submit" value="SIGN UP">
+        <input type="password" id="password" name="password" placeholder="Password">
+        <input id="submit" type="submit" value="LOGIN">
       </form>
     </div>
 
-    <script src="js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="js/validation.js"></script>
 
     </body>
 </html>

@@ -41,6 +41,7 @@
         display: flex;
         justify-content: space-around;
         box-shadow: 1px 1px 1px #d3d3d3;
+        padding-left: 1.4em;
     }
 
     .icon-bar a {
@@ -104,12 +105,6 @@
         border-bottom-color: #ECF0F1;
         border-bottom-style: solid;
     }
-    .lazy {
-/*
-        width: 250px;
-        height: 250px;
-*/
-    }
 }
 
 
@@ -117,10 +112,11 @@
 /*  html { background: blue; }*/
     .icon-bar {
         justify-content: flex-end;
+        padding-left: .5em;
     }
 
     .icon-bar a{
-        padding: .5em .9em;
+        padding: .5em 1em;
     }
 
     .feedItems{

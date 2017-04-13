@@ -1,18 +1,18 @@
 html {
-    font: normal 100%/1.5 Roboto, Arial, sans-serif; /* 1.200 Minor Third*/
-    line-height: 1.5;
+  font: normal 100%/1.5 Roboto, Arial, sans-serif; /* 1.200 Minor Third*/
+  line-height: 1.5;
 }
 
-html, body{
-    margin: 0;
-    padding: 0;
-    height: 100%;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
-
+/*Links*/
 a:link { color: black; text-decoration: none;}
 a:visited { color: black; }
-a:hover{
+a:hover {
   opacity: 1;
   color: #e78e8e;
   -webkit-transition:all 0.01s linear;
@@ -21,51 +21,100 @@ a:hover{
   transition:all 0.01s linear;
 }
 
-h1, h2, h3, h4, h5, h6, p, a, li{
+h1, h2, h3, h4, h5, h6, p, a, li {
     line-height: 1.5;
 }
 
 h1 { font-size: 2.4888em; }
 h2 { font-size: 2.074em; }
 h3 { font-size: 1.728em; }
-h4 { font-size: 1.44em }
+h4 { font-size: 1.44em; }
 h5 { font-size: 1.2em; }
 h6 { font-size: 1em; }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+/* Navigation styling*/
+
+.icon-bar{ display: inline; }
+
+.icon-bar {
+  width: 100%;
+  background-color: white;
+  overflow: auto;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 1px 1px 1px #d3d3d3;
+}
+
+.icon-bar a {
+  float: right;
+  text-align: center;
+  width: 5%;
+  transition: all 0.3s ease;
+  color: #d3d3d3;
+  font-size: 1.5em;
+  padding: 1em;
+}
+
+.icon-bar a:hover, .icon-bar a.active{
+  color: grey;
+}
+
+/*Upload profile picture*/
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+input#file {
+  display: inline-block;
+  width: 100%;
+  padding: 120px 0 0 0;
+  height: 100px;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+}
 
 /*Media Queries*/
 
 /*SMALL*/
 @media (min-width: 300px) {
-    html { background: white; }
+  html { background: white; }
 
 /* profile*/
-  .icon-bar{ display: inline; }
-
-  .icon-bar {
-    width: 100%;
-    background-color: white;
-    overflow: auto;
-    display: flex;
-    justify-content: space-around;
-    box-shadow: 1px 1px 1px #d3d3d3;
-  }
-
-  .icon-bar a {
-    float: right;
-    text-align: center;
-    width: 5%;
-    transition: all 0.3s ease;
-    color: #d3d3d3;
-    font-size: 1.5em;
-    padding: 1em;
-  }
-
-  .icon-bar a:hover, .icon-bar a.active{
-    color: grey;
-  }
-  
-  .profile{
+  .profile {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -73,16 +122,30 @@ h6 { font-size: 1em; }
     margin: 5%;
   }
 
-  #profile-pic{
+  .upload-profile{
+    position: relative;
+  }
+
+  #profile-pic {
     padding: 0;
-    width: 40%;
+    width: 100%;
+    border-radius: 50%;
   }
 
-  .info{
-      margin-left: 5%;
+  .profile-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 10em;
+    height: 10em;
+    background: rgba(0,0,0,.6);
   }
 
-  #myBtn{
+  .info {
+    margin-left: 8%;
+  }
+
+  #myBtn, .follow {
     width: 80%;
     margin-top: .5em;
     padding: .5em;
@@ -92,80 +155,106 @@ h6 { font-size: 1em; }
     text-align: center;
   }
 
+  #myBtn:hover {
+    background-color: grey;
+    color: white;
+  }
+
+  .see-followers {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-start;
+    background-color: rgba(211, 215, 213, .5);
+    height: 10%;
+    margin: .5em auto;
+    padding: 1em;
+    width: 90%;
+  }
+
+  .follower-content {
+    overflow-y: auto;
+  }
+
+  h4{
+    text-align: center;
+    margin-top: .5em
+  }
+
   /* Modal background */
   .modal {
-      display: none; 
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgb(0,0,0);
-      background-color: rgba(0,0,0,0.6);
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.6);
   }
 
   /* Modal Content */
   .modal-content {
-      background-color: #fefefe;
-      border-radius: 5px;
-      margin: 10% auto;
-      padding: 20px;
-      width: 80%;
-      height: 50%;
+    background-color: #fefefe;
+    margin: 0 auto;
+    padding: 20px;
+    height: 100%;
+    overflow-y: auto;
   }
 
   /* Close Button */
-  .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
+  .close, .close2, .close3 {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: fixed;
   }
 
-  .close:hover,
-  .close:focus {
-      color: black;
-      text-decoration: none;
-      cursor: pointer;
+  .close:hover, .close2:hover, .close3:hover,
+  .close:focus, .close2:focus, .close3:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
   }
 
-  .boxes{
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-around;
+  .boxes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
   }
 
-  .box{
-      width: 100%;
-      padding: 1em 0;
-      border-top: 1px solid rgba(211,211,211, .5);
-      border-bottom: 1px solid rgba(211,211,211, .5);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+  .box {
+    width: 100%;
+    padding: 1em 0;
+    border-top: 1px solid rgba(211,211,211, .5);
+    border-bottom: 1px solid rgba(211,211,211, .5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .box p { color: grey; }
 
-  .box2{
-      padding-top: 1em;
-      border: none;
-      border-bottom: 1px solid rgba(211,211,211, .2);
+  .box2 {
+    padding-top: 1em;
+    border: none;
+    border-bottom: 1px solid rgba(211,211,211, .2);
   }
 
   .underline a:hover, .underline a.active {
-      border-bottom: solid 2px black;
+    border-bottom: solid 2px black;
   }
 
-  .box img{
-      width: 20%;
+  .box img {
+    width: 20%;
   }
 
-  .photo, .post-photo{
-      width: 100%;
+  .photo, .post-photo {
+    width: 100%;
   }
 
 /*edit profile*/
@@ -186,16 +275,22 @@ h6 { font-size: 1em; }
   }
 
 /*  Form styling*/
+  .form-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
 
-  input[type=text], textarea, select {
+  input[type=text], input[type=password], textarea, select {
     width: 100%;
     padding: 12px 15px;
     font-size: 1em;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: none;
     border-radius: 4px;
     box-sizing: border-box;
+    background-color: rgba(211, 215, 213, .5);
   }
 
   input[type=submit] {
@@ -214,15 +309,31 @@ h6 { font-size: 1em; }
     background-color: grey;
   }
 
+  .form-style{
+    background-color: white;
+    width: 70%;
+    margin: 0 auto;
+    box-shadow: 1px 1px 1px #d3d3d3;
+  }
+
   .form{
     border-radius: 5px;
     padding: 2em;
   }
 
-  .camera{
+  .errors{
+    background-color: pink;
+  }
+
+  /*.camera{
     background-color: grey;
     width: 100%;
     height: 40%;
+  }*/
+
+  .container {
+    position: relative;
+    width: 80%;
   }
 }
 
@@ -259,8 +370,14 @@ h6 { font-size: 1em; }
     margin: 5%;
   }
 
-  .modal-content{
-    width: 60%;
+  /* Modal Content */
+  .modal-content {
+      background-color: #fefefe;
+      border-radius: 5px;
+      margin: 10% auto;
+      padding: 20px;
+      width: 60%;
+      height: 50%;
   }
 
   .profile-nav{
@@ -278,7 +395,7 @@ h6 { font-size: 1em; }
     margin: 5% 5% 0 40%;
     background-color: white;
     border-radius: 10px;
-    padding: .5em
+    padding: .25em
   }
 
   .box img{
@@ -292,8 +409,14 @@ h6 { font-size: 1em; }
     margin-top: 5em;
   }
 
+  .boxes.followers{
+    margin-bottom: 1em;
+    border: 1px solid #d3d3d3;
+  }
+
   .box{
     border: none;
+    padding: .5em 0;
   }
 
   .photo{
@@ -321,11 +444,15 @@ h6 { font-size: 1em; }
     margin: 0 42.5%;
   }
 
-  input[type=text], textarea, select, input[type=submit] {
+  input[type=text], input[type=password], textarea, select, input[type=submit] {
     width: 60%;
     margin: 1% 20%;
   }
 
+  .container {
+    position: relative;
+    width: 50%;
+  }
 }
 
 /*LARGE*/
@@ -346,7 +473,7 @@ h6 { font-size: 1em; }
   }
 
   .followers{
-    margin: 2% 0 0 30%;
+    margin: 2% 0 0 32%;
   }
 
   .profile-nav{
@@ -380,7 +507,11 @@ h6 { font-size: 1em; }
     margin: 0 45%;
   }
 
-  input[type=text], textarea, select, input[type=submit] {
+  .see-followers{
+    width: 60%;
+  }
+
+  input[type=text], input[type=password], textarea, select, input[type=submit] {
     width: 40%;
     margin: 1% 30%;
   }
