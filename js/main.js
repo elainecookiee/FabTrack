@@ -10,17 +10,15 @@ var span = document.getElementsByClassName("close")[0];
 var span2 = document.getElementsByClassName("close2")[0];
 var span3 = document.getElementsByClassName("close3")[0];
 
-
 btn.onclick = function() {
     modal.style.display = "block";
 }
 
-followers.onclick = function(){
+followers.onclick = function() {
 	modal2.style.display = "block";
 }
 
-following.onclick = function(){
-	console.log('followering')
+following.onclick = function() {
 	modal3.style.display = "block";
 }
 
@@ -39,5 +37,9 @@ span3.onclick = function() {
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
+    } else if (event.target == modal2) {
+        modal2.style.display = "none";
+    } else if (event.target == modal3) {
+        modal3.style.display = "none";
     }
 }
